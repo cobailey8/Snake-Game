@@ -1,0 +1,306 @@
+/* Global Variables etc. */
+:root {
+    --backgroundColor: #3f3f44;
+    --gameBoardColor: #f7f7f7;
+    --snakeColor: #fca356;
+    --foodColor: #cceabb;
+    --headingTextColor: firebrick;
+    --subTextColor: #3f3f44;
+    --buttonTextColor: white;
+    --borderColor: #3f3f44;
+    --btnBackgroundColor: linear-gradient(270deg, rgba(169,91,219,1) 0%, rgba(219,91,91,1) 24%, rgba(213,219,91,1) 50%, rgba(91,219,106,1) 76%, rgba(91,158,219,1) 100%);
+    --sliderThumbColor: black;
+    --sliderTrackColor: #30a98b;
+}
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: var(--backgroundColor);
+}
+
+/* GameBoard Styles*/
+#game-board {
+    background-color: var(--gameBoardColor);
+    width: 100vmin;
+    height: 100vmin;
+    display: grid;
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+    cursor: none;
+}
+
+/* Score Board Styles*/
+#score-board {
+    background-color: var(--foodColor);
+    opacity: .8;
+    color: var(--backgroundColor);
+    margin: 0;
+    width: 20vmin;
+    height: 5vmin;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#points {
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 3vmin;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Game Pieces Styles*/
+.snake {
+    /* background: url('./images/snake.png') no-repeat center;
+    background-size: contain; */
+    
+    background-color: var(--snakeColor);
+    border: .25vmin solid var(--borderColor);
+    border-radius: 10px;
+}
+
+.food {
+    /* background: url('./images/burger.png') no-repeat center;
+    background-size: contain; */
+
+    background-color: var(--foodColor);
+    border: .25vmin solid var(--borderColor); 
+    border-radius: 50%;
+}
+
+
+/* Game Over Modal Styles*/
+#modalBG {
+    background-color: rgba(128, 128, 128, 0.438);
+    width: 100vmin; 
+    height: 100vmin;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.sbBackground {
+    background-color: rgba(128, 128, 128, 0.438);
+    width: 100vmin; 
+    height: 100vmin;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#game-modal {
+    background-color: var(--gameBoardColor);
+    border: 3px solid var(--borderColor);
+    border-radius: 20px;
+    width: 50vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.headText {
+    margin: 1vmin;
+    font-family: "Lucida Console", Courier, monospace;
+    font-weight: bold;
+    font-size: 5vmin;
+    text-align: center;
+    text-decoration: none;
+    color: var(--headingTextColor);
+}
+
+.subText1{
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 3vmin;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--subTextColor);
+    padding: 1vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.subText2 {
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 2vmin;
+    text-decoration: none;
+    color: var(--subTextColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2vmin;
+    margin: 0;
+}
+
+.centerText {
+    text-align: center
+}
+
+/* Range Sliders */
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: .75vmin;
+    background: var(--sliderTrackColor);
+}
+
+input[type=range]::-webkit-slider-thumb {
+    height: 2vmin;
+    width: 2vmin;
+    background: var(--sliderThumbColor);
+    -webkit-appearance: none;
+    margin-top: -.75vmin;
+  }
+
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: var(--sliderTrackColor);
+  }
+
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: .75vmin;
+    background: var(--sliderTrackColor);
+  }
+
+  input[type=range]::-moz-range-thumb {
+    height: 2vmin;
+    width: 2vmin;
+    background: var(--sliderThumbColor);
+    cursor: pointer;
+  }
+
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: .75vmin;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  input[type=range]::-ms-fill-lower {
+    background: var(--sliderTrackColor);
+  }
+
+  input[type=range]::-ms-fill-upper {
+    background: var(--sliderTrackColor);
+  }
+
+  input[type=range]::-ms-thumb {
+    height: 2vmin;
+    width: 2vmin;
+    background: var(--sliderThumbColor);
+  }
+
+  input[type=range]:focus::-ms-fill-lower {
+    background: var(--sliderTrackColor);
+  }
+
+  input[type=range]:focus::-ms-fill-upper {
+    background: var(--sliderTrackColor);
+  }
+
+.settingsRangeSlider {
+    margin: 10px;
+    width: 20vmin;
+    height: .80vmin;
+    opacity: .7;
+}
+
+.settingsRangeSlider:hover {
+    opacity: 1;
+}
+
+.settingsCB  {
+    width: 2vmin;
+    height: 2vmin;
+}
+
+.settingsBtn {
+    max-height: 50px;
+    height: 4vmin;
+    margin: 3vmin 0 2.2vmin 0;
+}
+
+.inputGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputGroupCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.basicButton {
+    background: var(--btnBackgroundColor);
+    background-size: 500% 500%;
+    background-position: left;
+
+    margin: 3vmin 1vmin 2vmin 1vmin;
+    border: none;
+    font-family: "Lucida Console", Courier, monospace;
+    font-weight: 900;
+    font-size: 2vmin;
+    color: var(--buttonTextColor);
+    border: .1vmin solid var(--borderColor);
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    min-width: 20vmin;
+    height: 5vmin;
+}
+
+.basicButton:hover {
+    animation: gradient .5s ease forwards;
+}
+
+.basicButtonSm {
+    background-color: white;
+    padding: 0 2vmin;
+    margin: 0 .5vmin;
+    font-family: "Lucida Console", Courier, monospace;
+    font-weight: 600;
+    font-size: 2vmin;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border: .1vmin solid var(--borderColor);
+    border-radius: 10px;
+}
+
+.selectedSm {
+    background-color: black;
+    color: white
+}
+
+@keyframes gradient {
+   0% {
+       background-position: 0%;
+   } 
+   100% {
+       background-position: 100%;
+   }
+}
