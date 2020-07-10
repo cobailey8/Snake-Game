@@ -1,6 +1,6 @@
 # Snake-Game
 
-## The classic game "Snake" developed with vanilla Javascript:exclamation:
+## The classic game "Snake" developed using vanilla Javascript:exclamation:
 
 
 ### **:speaker: AUDIO:**
