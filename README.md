@@ -62,9 +62,21 @@ For now, audio is equalized using the the Audio object's `.volume` property. In 
       - :musical_note: by [ZapSplat](https://www.zapsplat.com/)
 
 
+### **:mailbox: Memory/Storage:**
 
-
-
+  - **localStorage:**
+      - **_DISCLAIMER:_ For now, localStorage is extremely basic and is NOT stored as a JSON object. This was for testing purposes and I haven't gotten around to bundling it.**
+      - **Local storage may contain the following values:**
+          - 'accessibility' : holds a value that represents what color mode the user has set. Current values that are reflected as settings are 'dColor', 'pColor', 'aColor', and 'tColor' 
+          - 'highScore' : Holds a value representing the highest score the user has achieved in game that the user has saved in settings.
+          - 'showScoreboard' : boolean value for whether or not the scoreboard is shown in game that the user has saved in settings.
+          - 'snakeExpansionRate' : Holds a numerical value representing the snake's expansion rate that the user has saved in settings.
+          - 'snakeSpeed' : Holds a numberical value representing the number of ticks per second the snake will move that the user has saved in settings.
+          - 'volume' : Holds a numerical value representing the volume divided by 100 that the user has saved in settings.
+  - **sessionStorage**
+      - *Mostly used to keep track of modals and improve HCI.*
+      - *Session Storage may contain the following values:*
+        - 'greet' : Boolean value used for the system to decide wether or not to display the greeting modal on page load.
 
 
 
